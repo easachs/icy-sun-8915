@@ -11,3 +11,9 @@
   <%= form.text_field :ticket_number %>
   <%= form.submit "Add ticket" %>
 <% end %>
+
+<div id="shared-tickets">Tickets shared with: <% @employee.shared_tickets.each do |ticket| %>
+  <% ticket.employees.each do |friend| %>
+    <p><%= friend.name if friend != @employee %></p>
+  <% end %>
+<% end %></div>
